@@ -1,0 +1,33 @@
+{% extends 'base_main.html' %}
+
+{% block title %}
+    学生分页页面
+{% endblock %}
+
+{% block content %}
+    <h2>学生信息</h2>
+    {% for stu in stus %}
+        id:{{ stu.s_id }}
+        姓名:{{ stu.s_name }}
+        年龄:{{ stu.s_age }}
+        <br>
+    {% endfor %}
+    <br>
+    总页数:{{ paginate.pages }} <!-- 总页数 -->
+    <br>
+    一共有{{ paginate.total }}条数据
+    <br>
+    当前页数: {{ paginate.page }} <!-- 当前页数 -->
+    <br>
+    {% if paginate.has_prev %}
+        <a href="/stu/stupage/?page={{ paginate.prev_num }}">上一页:{{ paginate.prev_num }}</a>
+    {% endif %}
+    <br>
+    {% if paginate.has_next %}
+        <a href="/stu/stupage/?page={{ paginate.next_num }}">下一页:{{ paginate.next_num }}</a>
+    {% endif %}
+    <br>
+    页码:{% for i in paginate.iter_pages() %}
+            <a href="/stu/stupage/?page={{ i }}">{{ i }}</a>
+        {% endfor %} <!-- 页列表 -->
+{% endblock %}

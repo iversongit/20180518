@@ -1,0 +1,42 @@
+{% extends 'base_main.html' %}
+{% block title %}
+    学生选课系统
+{% endblock %}
+
+{% block content %}
+    <form action="" method="post">
+    <h3>学生信息:</h3>
+    <br>
+    <select name="student">
+        <option value="">请选择学生信息</option>
+        {% for stu in stus %}
+            <option value="{{ stu.s_id }}">{{ stu.s_name }}</option>
+        {% endfor %}
+    </select>
+
+    <h3>课程信息:</h3>
+    <select name="course">
+        <option value="">请选择课程信息</option>
+        {% for cou in cous %}
+            <option value="{{ cou.c_id }}">{{ cou.c_name }}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <select name="course">
+        <option value="">请选择课程信息</option>
+        {% for cou in cous %}
+            <option value="{{ cou.c_id }}">{{ cou.c_name }}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <select name="course">
+        <option value="">请选择课程信息</option>
+        {% for cou in cous %}
+            <option value="{{ cou.c_id }}">{{ cou.c_name }}</option>
+        {% endfor %}
+    </select>
+    <br>
+
+    <input type="submit" value="提交">
+    </form>
+{% endblock %}

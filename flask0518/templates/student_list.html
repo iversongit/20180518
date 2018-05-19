@@ -1,0 +1,10 @@
+{% extends 'base_main.html' %}
+
+{% block content %}
+    {% for stu in stus %}
+        学生id:{{ stu.s_id }}
+        学生姓名:{{ stu.s_name }}
+        学生年龄:{{ stu.s_age }}
+        <br>
+    {% endfor %}
+{% endblock %}

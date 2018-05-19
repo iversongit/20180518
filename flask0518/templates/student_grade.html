@@ -1,0 +1,14 @@
+{% extends 'base_main.html' %}
+{% block title %}
+    通过学生找班级
+{% endblock %}
+
+{% block content %}
+    学生id:{{ stu.s_id }}
+    学生姓名:{{ stu.s_name }}
+    <br>
+    班级id:{{ grade.g_id }}
+    班级名称:{{ grade.g_name }}
+    班级介绍:{{ grade.g_desc }}
+    <br>
+{% endblock %}

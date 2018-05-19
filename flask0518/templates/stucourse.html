@@ -1,0 +1,17 @@
+{% extends "base_main.html" %}
+{% block title %}
+    指定学生的已选课程
+{% endblock %}
+
+{% block content %}
+    学生id:{{ s_id }}
+    学生姓名:{{ s_name }}
+    <br>
+    {% for cou in cous %}
+        课程id:{{ cou.c_id }}
+        课程名称:{{ cou.c_name }}
+        <a href="/stu/deletecoursebyid/{{ s_id }}/{{ cou.c_id }}">删除</a>
+        <br>
+    {% endfor %}
+
+{% endblock %}
